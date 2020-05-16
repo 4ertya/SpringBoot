@@ -2,6 +2,7 @@ package org.example.myApp.controller;
 
 import antlr.debug.MessageAdapter;
 import org.example.myApp.domain.Message;
+import org.example.myApp.domain.User;
 import org.example.myApp.repos.MessageRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
