@@ -18,7 +18,7 @@ public class RegistrationController {
 
     @GetMapping("/registration")
     public String registration() {
-        return "registration";
+        return "authorization";
     }
 
     @PostMapping("/registration")
@@ -26,11 +26,11 @@ public class RegistrationController {
         User userFromDb = userRepo.findByUsername(user.getUsername());
         if (userFromDb != null) {
             model.put("message", "User exists!");
-            return "registration";
+            return "authorization";
         }
         user.setActive(true);
         user.setRoles(Collections.singleton(Role.USER));
         userRepo.save(user);
-        return "redirect://login";
+        return "redirect:/authorization";
     }
 }
